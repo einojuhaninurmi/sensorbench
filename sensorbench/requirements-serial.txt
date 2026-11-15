@@ -1,0 +1,2 @@
+# Optional dependency for physical USB serial acquisition only.
+pyserial==3.5

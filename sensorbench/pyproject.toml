@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sensorbench"
+version = "0.3.0"
+description = "A local sensor test bench with traceable data and automated quality checks"
+requires-python = ">=3.11"
+dependencies = ["tzdata; sys_platform == 'win32'"]
+
+[project.optional-dependencies]
+serial = ["pyserial==3.5"]
+gps = ["pyserial==3.5", "mgrs==1.5.4"]
+
+[project.scripts]
+sensorbench = "sensorbench.__main__:main"
+
+[tool.setuptools]
+packages = ["sensorbench"]
+
+[tool.setuptools.package-data]
+sensorbench = ["static/index.html"]
